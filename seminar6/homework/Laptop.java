@@ -100,11 +100,11 @@ public class Laptop {
                 ", modelName='" + modelName + '\'' +
                 ", manufactureDate=" + manufactureDate + 
                 ", cpu='" + cpu + '\'' +
-                ", ram='" + ram + '\'' +
-                ", hardDiskSize='" + hardDiskSize + '\'' +
+                ", ram='" + ram + "Gb'" +
+                ", hardDiskSize='" + hardDiskSize + "Gb'" +
                 ", systemOS='" + systemOS + '\'' +
                 ", color='" + color +
-                '}';
+                "'}";
     }
 
 }
