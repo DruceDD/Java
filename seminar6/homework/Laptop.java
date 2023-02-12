@@ -1,8 +1,7 @@
 package homework;
 
 import java.time.LocalDate;
-import java.util.List;
-import java.util.ArrayList;
+import java.util.*;
 
 public class Laptop {
     private String brandName;
@@ -12,10 +11,10 @@ public class Laptop {
     private int ram;
     private int hardDiskSize;
     private String systemOS;
-    private String color;
+    private List<String> colors = new ArrayList<>();
+    private int price;
 
-    public Laptop(String brandName, String modelName, LocalDate manufactureDate, String cpu, int ram, int hardDiskSize,
-            String systemOS, String color) {
+    public Laptop(String brandName, String modelName, LocalDate manufactureDate, String cpu, int ram, int hardDiskSize, String systemOS, int price) {
         this.brandName = brandName;
         this.modelName = modelName;
         this.manufactureDate = manufactureDate;
@@ -23,7 +22,7 @@ public class Laptop {
         this.ram = ram;
         this.hardDiskSize = hardDiskSize;
         this.systemOS = systemOS;
-        this.color = color;
+        this.price = price;
     }
 
     public String getBrandName() {
@@ -82,29 +81,34 @@ public class Laptop {
         this.systemOS = systemOS;
     }
 
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public void addColor(String color) {
+        this.colors.add(color);
+    }
+
     public String getColor() {
-        return color;
+        return colors.toString();
     }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    // public void addVaccination(Vaccination vaccination) {
-    // this.vaccinations.add(vaccination);
-    // }
 
     @Override
     public String toString() {
-        return "Laptop{" + "brandName='" + brandName + '\'' +
-                ", modelName='" + modelName + '\'' +
-                ", manufactureDate=" + manufactureDate + 
-                ", cpu='" + cpu + '\'' +
-                ", ram='" + ram + "Gb'" +
-                ", hardDiskSize='" + hardDiskSize + "Gb'" +
-                ", systemOS='" + systemOS + '\'' +
-                ", color='" + color +
-                "'}";
+        return "--- Ноутбук ---\n" + 
+                "- бренд: " + brandName + "\n" +
+                "- модель: " + modelName + "\n" +
+                "- дата производства: " + manufactureDate + "\n" +
+                "- CPU: " + cpu + "\n" +
+                "- RAM: " + ram + " Gb" + "\n" +
+                "- размер жесткого диска: " + hardDiskSize + " Gb" + "\n" +
+                "- операционная система: " + systemOS + "\n" +
+                "- цвет: " + colors.toString().replace('[', ' ').replace(']', ' ') + "\n" +
+                "- цена: " + price + "\n\n";
     }
 
 }
